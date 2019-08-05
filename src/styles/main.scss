@@ -9,11 +9,9 @@
   top: 50%;
   left: 50%;
   margin: -250px 0 0 -350px;
-  counter-reset: daysOfMonth;
 }
 
 .calendar div {
-  counter-increment: daysOfMonth;
   width: 100px;
   height: 100px;
   background-color: $cell-color;
@@ -29,15 +27,16 @@
     transform: translateY(-20px);
     transition-duration: 0.5s;
   }
-
-  &::after {
-    content: counter(daysOfMonth);
-    line-height: 100px;
-  }
 }
 
 .calendar-30 div:last-child {
   display: none;
+}
+
+@for $i from 1 through 31 {
+  .calendar div {
+    content: "#{$i}";
+  }
 }
 
 @for $i from 30 through 31 {
