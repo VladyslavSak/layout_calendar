@@ -51,6 +51,15 @@
   }
 }
 
+$calendar__days:(tue, wed, thu, fri, sat, sun);
+@for $i from 2 through 7 {
+   @each $days in $calendar__days {
+     .calendar-#{$days} {
+       grid-column-start: #{$i}
+     };
+  }  
+}
+
 .calendar-tue div:first-child {
   grid-column-start: 2;
 }
