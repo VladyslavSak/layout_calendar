@@ -1,7 +1,67 @@
-@import "utils";
-@import "fonts";
-@import "typography";
+@import "variables";
 
-body {
-  background: $c-gray;
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 100px);
+  grid-template-rows: repeat(7, 100px);
+  grid-gap: 1px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -250px 0 0 -350px;
+}
+
+.calendar div {
+  width: 100px;
+  height: 100px;
+  background-color: $cell-color;
+  border: 1px solid $border-color;
+  box-sizing: border-box;
+  font-family: "Arial", serif;
+  font-size: 30px;
+  text-align: center;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $hover-color;
+    transform: translateY(-20px);
+    transition-duration: 0.5s;
+  }
+}
+
+.calendar-30 div:last-child {
+  display: none;
+}
+
+@for $i from 1 through 31 {
+  .calendar div {
+    content: "#{$i}";
+  }
+}
+
+@for $i from 30 through 31 {
+  .calendar-29 div:nth-of-type(#{$i}) {
+    display: none;
+  }
+}
+
+@for $i from 29 through 31 {
+  .calendar-28 div:nth-of-type(#{$i}) {
+    display: none;
+  }
+}
+
+$calendar__days: (
+  tue: 2,
+  wed: 3,
+  thu: 4,
+  fri: 5,
+  sat: 6,
+  sun: 7
+);
+
+@each $day, $number in $calendar__days {
+  .calendar-#{$day} {
+    grid-column-start: #{$number};
+  }
 }

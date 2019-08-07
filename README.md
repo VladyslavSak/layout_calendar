@@ -1,12 +1,3 @@
-# Base template for Gulp
-
-## Task
-
----
-**Read the guideline before start**
-
-[Guideline](https://github.com/mate-academy/js_task-DOM-guideline)
-
 **Result**
 
-- [UPDATE DEMO LINK](https://<your_account>.github.io/<repo_name>/)
+- [Solution to "Calendar"](https://vladyslavsak.github.io/layout_calendar/)

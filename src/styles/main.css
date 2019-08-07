@@ -7,7 +7,8 @@
   top: 50%;
   left: 50%;
   margin: -250px 0 0 -350px;
-  counter-reset: daysOfMonth; }
+  counter-reset: daysOfMonth;
+}
 
 .calendar div {
   counter-increment: daysOfMonth;
@@ -15,56 +16,70 @@
   height: 100px;
   background-color: #eee;
   border: 1px solid #000;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: "Arial", serif;
   font-size: 30px;
-  text-align: center; }
-  .calendar div:hover {
-    cursor: pointer;
-    background-color: pink;
-    -webkit-transform: translateY(-20px);
-            transform: translateY(-20px);
-    -webkit-transition-duration: 0.5s;
-            transition-duration: 0.5s; }
-  .calendar div::after {
-    content: counter(daysOfMonth);
-    line-height: 100px; }
+  text-align: center;
+}
+
+.calendar div:hover {
+  cursor: pointer;
+  background-color: pink;
+  transform: translateY(-20px);
+  transition-duration: 0.5s;
+}
+
+.calendar div::after {
+  content: counter(daysOfMonth);
+  line-height: 100px;
+}
 
 .calendar-30 div:last-child {
-  display: none; }
+  display: none;
+}
 
 .calendar-29 div:nth-of-type(30) {
-  display: none; }
+  display: none;
+}
 
 .calendar-29 div:nth-of-type(31) {
-  display: none; }
+  display: none;
+}
 
 .calendar-28 div:nth-of-type(29) {
-  display: none; }
+  display: none;
+}
 
 .calendar-28 div:nth-of-type(30) {
-  display: none; }
+  display: none;
+}
 
 .calendar-28 div:nth-of-type(31) {
-  display: none; }
+  display: none;
+}
 
 .calendar-tue div:first-child {
-  grid-column-start: 2; }
+  grid-column-start: 2;
+}
 
 .calendar-wed div:first-child {
-  grid-column-start: 3; }
+  grid-column-start: 3;
+}
 
 .calendar-thu div:first-child {
-  grid-column-start: 4; }
+  grid-column-start: 4;
+}
 
 .calendar-fri div:first-child {
-  grid-column-start: 5; }
+  grid-column-start: 5;
+}
 
 .calendar-sat div:first-child {
-  grid-column-start: 6; }
+  grid-column-start: 6;
+}
 
 .calendar-sun div:first-child {
-  grid-column-start: 7; }
+  grid-column-start: 7;
+}
 
 /*# sourceMappingURL=main.css.map */
