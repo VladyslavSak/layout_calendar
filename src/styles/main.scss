@@ -51,35 +51,17 @@
   }
 }
 
-$calendar__days:(tue, wed, thu, fri, sat, sun);
-@for $i from 2 through 7 {
-   @each $days in $calendar__days {
-     .calendar-#{$days} {
-       grid-column-start: #{$i}
-     };
-  }  
-}
+$calendar__days: (
+  tue: 2,
+  wed: 3,
+  thu: 4,
+  fri: 5,
+  sat: 6,
+  sun: 7
+);
 
-.calendar-tue div:first-child {
-  grid-column-start: 2;
-}
-
-.calendar-wed div:first-child {
-  grid-column-start: 3;
-}
-
-.calendar-thu div:first-child {
-  grid-column-start: 4;
-}
-
-.calendar-fri div:first-child {
-  grid-column-start: 5;
-}
-
-.calendar-sat div:first-child {
-  grid-column-start: 6;
-}
-
-.calendar-sun div:first-child {
-  grid-column-start: 7;
+@each $day, $number in $calendar__days {
+  .calendar-#{$day} {
+    grid-column-start: #{$number};
+  }
 }
